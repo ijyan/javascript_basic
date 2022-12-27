@@ -52,8 +52,60 @@ console.log(typeof null); // object
 /**
  * let, const and var
  */
+/*
 let age = 30;
 age = 31;
 
 const birthYear = 2000;
 // birthYear = 2000;
+ */
+
+/**
+ * Basic Operators
+ */
+/*
+// Math operators
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2020;
+console.log(ageJonas, ageSarah);
+
+console.log(ageJonas * 2, ageJonas / 2, 2 ** 3);
+
+const firstName = 'Jonas';
+const lastName = 'Schmedtmann';
+console.log(`${firstName} ${lastName}`);
+
+// Assignment operators
+let x = 10 + 5; // 15
+x += 10; // x = x + 10 = 25
+x *= 4; // x = x * 4 = 100
+x++; // x = x + 1;
+x--; // x = x - 1;
+x--; // x = x - 1;
+console.log(x); // 99
+
+// Comparison operators
+console.log(ageJonas > ageSarah); // >, <, >=, <=
+console.log(ageSarah >= 18); // false
+
+const isFullAge = ageSarah >= 18;
+
+console.log(now - 1991 > now - 2018); // true
+*/
+
+/**
+ * Operator Precedence
+ */
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2020;
+
+console.log(now - 1991 > now - 2018);
+
+let x; let y;
+x = y = 25 - 10 - 5; // x = y = 10, x = 10
+console.log(x, y);
+
+const averageAge = (ageJonas + ageSarah) / 2;
+console.log(ageJonas, ageSarah, averageAge);
