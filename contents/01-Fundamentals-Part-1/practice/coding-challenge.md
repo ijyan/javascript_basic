@@ -87,8 +87,82 @@ const BMIMark = BMI(massMark, heightMark);
 const BMIJohn = BMI(massJohn, heightJohn);
 
 if (BMIMark > BMIJohn) {
-    console.log(`Mark's BMI (${BMIMark.toFixed(1)}) is higher than John's (${BMIJohn.toFixed(1)})!`)
+  console.log(`Mark's BMI (${BMIMark.toFixed(1)}) is higher than John's (${BMIJohn.toFixed(1)})!`);
 } else {
-    console.log(`John's BMI (${BMIJohn.toFixed(1)}) is higher than Marks's (${BMIMark.toFixed(1)})!`)
+  console.log(`John's BMI (${BMIJohn.toFixed(1)}) is higher than Marks's (${BMIMark.toFixed(1)})!`);
+}
+```
+
+### Coding Challenge #3
+
+There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. The winner with the
+highest average score wins the a trophy!
+
+1. Calculate the average score for each team, using the test data below
+2. Compare the team's average scores to determine the winner of the competition, and print it to the console. Don't
+   forget that there can be a draw, so test for that as well (draw means they have the same average score).
+
+3. BONUS 1: Include a requirement for a minimum score of 100. With this rule, a team only wins if it has a higher score
+   than the other team, and the same time a score of at least 100 points. HINT: Use a logical operator to test for
+   minimum score, as well as multiple else-if blocks 😉
+4. BONUS 2: Minimum score also applies to a draw! So a draw only happens when both teams have the same score and both
+   have a score greater or equal 100 points. Otherwise, no team wins the trophy.
+
+TEST DATA: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+
+GOOD LUCK
+
+**번역**
+
+돌핀스와 코알라라는 두 개의 체조 팀이 있습니다. 그들은 서로 3번 경쟁합니다. 평균 점수가 가장 높은 우승자가 트로피를 받습니다.
+
+1. 아래 테스트 데이터를 사용하여 각 팀의 평균 점수를 계산합니다.
+2. 팀의 평균 점수를 비교하여 대회 우승자를 결정하고 콘솔에 출력합니다. 무승부가 있을 수 있다는 것을 잊지 마십시오. 따라서 무승부는 평균 점수가 같다는 것을 의미합니다.
+3. 보너스 1: 최소 100점에 대한 요구 사항을 포함합니다. 이 규칙에 따르면, 한 팀이 다른 팀보다 높은 점수를 받고 동시에 100점 이상 받아야한 승리합니다. 힌트: 논리 연산자를 사용하여 최소 점수와 여러
+   개의 'else-if' 블록을 테스트합니다.
+4. 보너스 2: 최소 점수는 무승부도 적용됩니다! 무승부는 두 팀의 점수가 같고 두 팀의 점수가 100점 이상일 때만 발생합니다. 그렇지 않으면 어떤 팀도 트로피를 받지 못합니다.
+
+- TEST DATA: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+- TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+- TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+
+```js
+// TEST DATA
+const scoreDolphins = (97 + 108 + 89) / 3;
+const scoreKoalas = (88 + 91 + 110) / 3;
+console.log(scoreDolphins, scoreKoalas);
+
+if (scoreDolphins > scoreKoalas) {
+  console.log('Dolphins win the trophy 🏆');
+} else if (scoreKoalas > scoreDolphins) {
+  console.log('Koalas win the trophy 🏆');
+} else if (scoreDolphins === scoreKoalas) {
+  console.log('Both win the trophy 🏆');
+}
+```
+
+```js
+// BONUS 1
+const scoreDolphins = (97 + 112 + 101) / 3;
+const scoreKoalas = (109 + 95 + 123) / 3;
+console.log(scoreDolphins, scoreKoalas);
+
+// BONUS 2
+/*
+const scoreDolphins = (97 + 112 + 101) / 3;
+const scoreKoalas = (109 + 95 + 106) / 3;
+console.log(scoreDolphins, scoreKoalas);
+*/
+
+if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+  console.log('Dolphins win the trophy 🏆');
+} else if (scoreKoalas > scoreDolphins && scoreKoalas >= 100) {
+  console.log('Koalas win the trophy 🏆');
+} else if (scoreDolphins === scoreKoalas && scoreDolphins >= 100 && scoreKoalas >= 100) {
+  console.log('Both win the trophy!');
+} else {
+  console.log('No one wins the trophy 😭');
 }
 ```
