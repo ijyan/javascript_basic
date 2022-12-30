@@ -166,3 +166,38 @@ if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
   console.log('No one wins the trophy 😭');
 }
 ```
+
+### Coding Challenge #4
+
+Steven wants to build a very simple tip calculator for whenever he goes eating in a resturant. In his country, it's
+usual to tip 15% if the bill value is between 50 and 300. If the value is different, the tip is 20%.
+
+1. Your task is to caluclate the tip, depending on the bill value. Create a variable called 'tip' for this. It's not
+   allowed to use an if/else statement 😅 (If it's easier for you, you can start with an if/else statement, and then try
+   to convert it to a ternary operator!)
+2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip). Example: 'The
+   bill was 275, the tip was 41.25, and the total value 316.25'
+
+- TEST DATA: Test for bill values 275, 40 and 430
+- HINT: To calculate 20% of a value, simply multiply it by 20/100 = 0.2
+- HINT: Value X is between 50 and 300, if it's >= 50 && <= 300 😉
+
+**번역**
+
+스티븐은 식당에 가서 식사를 할 떄마다 아주 간단한 팁 계산기를 만들고 싶어합니다. 그의 나라에서는 청구 금액이 50에서 300 사이이면 15%를 팁으로 주는 것이 일반적입니다. 값이 다를 경우 팁은 20% 입니다.
+
+1. 당신의 임무는 청구서 가치에 따라 팁을 계산하는 것입니다. 이에 대한 `tip`이라는 변수를 만듭니다. if/else 문은 사용할 수 없습니다. (더 쉬운 경우 if/else 문으로 시작한 다음 3차 연산자로
+   변환할 수 있습니다!)
+2. `bill`, `tip`, `final value(bill + tip)`이 포함된 문자열을 콘솔에 출력합니다.
+   예: `The bill was 275, the tip was 41.25, and the total value 316.25`;
+
+- TEST DATA: bill values 275, 40 그리고 430을 테스트 하세요.
+- HINT: 값의 20%를 계산하려면 20/100 = 0.2를 곱하면 됩니다.
+- HINT: 값 X가 >= 50 && <= 300 인 경우 50과 300 사이입니다😉.
+
+```js
+const bill = 430;
+const tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.2;
+const totalBill = bill + tip;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${totalBill}`);
+```
