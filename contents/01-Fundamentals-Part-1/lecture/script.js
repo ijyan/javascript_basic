@@ -272,10 +272,8 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 /**
  * The switch Statement
  */
-
 const day = 'monday';
 
-// eslint-disable-next-line default-case
 switch (day) {
   case 'monday':
     console.log('Plan course structure');
@@ -293,8 +291,10 @@ switch (day) {
     break;
   case 'saturday':
   case 'sunday':
-    console.log('Not a valid day!');
+    console.log('Enjoy the weekend');
     break;
+  default:
+    console.log('Not a valid day!');
 }
 
 if (day === 'monday') {
