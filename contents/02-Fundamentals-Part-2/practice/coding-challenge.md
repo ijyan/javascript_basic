@@ -37,3 +37,28 @@ HINT: To check if number A is at least double number B, check for A >= 2 * B. Ap
 
 - HINT: 3개 값의 평균을 계산하려면 값을 모두 합하여 3으로 나눕니다.
 - HINT: 숫자 A가 더블 숫자 B 이상인지 확인하려면 A >= 2 * B를 확인하고, 이를 팀의 평균 점수에 적용한다.
+
+```js
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+// TEST 1
+let scoreDolphins = calcAverage(44, 23, 71);
+let scoreKoalas = calcAverage(85, 54, 41);
+
+const checkWinner = (avgDolphins, avgKoalas) => {
+   if (avgDolphins >= 2 * avgKoalas) {
+      console.log(`Dolphins win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
+   } else if (avgDolphins >= 2 * avgKoalas) {
+      console.log(`Koalas win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
+   } else {
+      console.log('No team wins...');
+   }
+};
+
+checkWinner(scoreDolphins, scoreKoalas);
+
+// TEST 2
+scoreDolphins = calcAverage(85, 54, 41);
+scoreKoalas = calcAverage(23, 34, 27);
+checkWinner(scoreDolphins, scoreKoalas);
+```
