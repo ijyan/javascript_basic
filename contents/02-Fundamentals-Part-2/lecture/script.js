@@ -185,3 +185,24 @@ if (friends.includes('Steven')) {
   console.log('You have a friend called Steven');
 }
 */
+
+/**
+ * Introduction to Objects
+ */
+/*
+const jonasArray = [
+  'Jonas',
+  'Schmedtmann',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven'],
+];
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
+  age: 29,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+};
+*/
