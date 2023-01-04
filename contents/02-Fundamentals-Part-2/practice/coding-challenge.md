@@ -46,13 +46,13 @@ let scoreDolphins = calcAverage(44, 23, 71);
 let scoreKoalas = calcAverage(85, 54, 41);
 
 const checkWinner = (avgDolphins, avgKoalas) => {
-   if (avgDolphins >= 2 * avgKoalas) {
-      console.log(`Dolphins win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
-   } else if (avgDolphins >= 2 * avgKoalas) {
-      console.log(`Koalas win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
-   } else {
-      console.log('No team wins...');
-   }
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
+  } else if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Koalas win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
+  } else {
+    console.log('No team wins...');
+  }
 };
 
 checkWinner(scoreDolphins, scoreKoalas);
@@ -61,4 +61,51 @@ checkWinner(scoreDolphins, scoreKoalas);
 scoreDolphins = calcAverage(85, 54, 41);
 scoreKoalas = calcAverage(23, 34, 27);
 checkWinner(scoreDolphins, scoreKoalas);
+```
+
+### Coding Challenge #2
+
+Steven is still building his tip calculator, using the same rules as before: Tip 15% of the bill if the bill value is
+between 50 and 300, and if the value is different, the tip is 20%.
+
+1. Write a function 'calcTip' that takes any bill value as an input and returns the corresponding tip, calculated based
+   on the rules above (you can check out the code from first tip calculator challenge if you need to). Use the function
+   type you like the most. Test the function using a bill value of 100.
+2. And now let's use arrays! So create an array 'bills' containing the test data below.
+3. Create an array 'tips' containing the tip value for each bill, calculated from the function you created before.
+4. BONUS: Create an array 'total' containing the total values, so the bill + tip.
+
+TEST DATA: 125, 555 and 44
+
+HINT: Remember that an array needs a value in each position, and that value can actually be the returned value of a
+function! So you can just call a function as array values (so don't store the tip values in separate variables first,
+but right in the new array) 😉
+
+GOOD LUCK 😀
+
+**번역**
+
+Steven은 여전히 이전과 동일한 규칙을 사용하여 팁 계산기를 구축하고 있습니다: 계산서 값이 50에서 300 사이이면 계산서의 15%를 팁으로 주고, 값이 다르면 팁이 20%를 팁으로 줍니다.
+
+1. 위의 규칙에 따라 계산된 모든 청구 값을 입력하고 해당 팁을 반환하는 함수 'calTip'을 작성합니다(필요한 경우 첫 번째 팁 계산기 챌린지에서 코드를 확인할 수 있습니다). 당신이 가장 좋아하는 기능 유형을
+   사용하세요. 빌 값 100을 사용하여 함수를 테스트합니다.
+2. 이제 어레이를 사용해 보겠습니다! 따라서 아래의 테스트 데이터를 포함하는 배열 `bills`를 작성하십시오.
+3. 이전에 만든 함수에서 계산된 각 지폐의 팁 값을 포함하는 배열 `팁`을 만듭니다.
+4. 보너스: 합계 값을 포함하는 배열 `합계`를 작성하여 `청구서 + 팁`을 제공합니다.
+
+- TEST DATA: 125, 555 and 44
+
+- HINT: 배열에는 각 위치에 값이 필요하며, 그 값은 실제로 함수의 반환 값이 될 수 있습니다! 따라서 함수를 배열 값으로 호출할 수 있습니다(따라서 팁 값을 먼저 별도의 변수에 저장하지 말고 새 배열에 바로
+  저장하십시오) 😉
+
+```js
+const calcTip = (bill) => {
+  return bill >= 50 && bill <= 300 ? bill * 0.5 : bill * 0.2;
+}
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = bills.map((val, idx) => val + tips[idx]);
+
+console.log(bills, tips, totals);
 ```
