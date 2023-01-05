@@ -243,4 +243,38 @@ if (jonas[interestedIn]) {
 jonas.location = 'Portugal';
 jonas.twitter = '@jonasschmedtman';
 console.log(jonas);
+
+// Challenge
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`,
+);
 */
+
+/**
+ * Object Methods
+ */
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
+  birthYear: 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriverLicense: true,
+
+  calcAge() {
+    // console.log(this);
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary() {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver's license`;
+  },
+};
+
+console.log(jonas.calcAge());
+
+console.log(jonas.age);
+console.log(jonas.getSummary());
