@@ -109,3 +109,68 @@ const totals = bills.map((val, idx) => val + tips[idx]);
 
 console.log(bills, tips, totals);
 ```
+
+### Coding Challenge #3
+
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations!
+Remember: BMI = mass / height ** 2 = mass / (height * height). (mass in kg and height in meter)
+
+1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI (the same method on both objects). Store the BMI value
+   to a property, and also return it from the method.
+3. Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John Smith's
+   BMI (28.3) is higher than Mark Miller's (23.9)!"
+
+TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
+
+**번역**
+
+마크와 존이 그들의 BMI를 비교하는 것으로 돌아가 봅시다! 이번에는, 계산을 실행하기 위해 객체를 사용해 봅시다! 기억하세요: BMI = 질량 / 키 ** 2 = 질량 / (키 * 키). (kg 단위 질량 및 미터
+단위 높이)
+
+1. 각 개체에 대해 전체 이름, 질량 및 높이에 대한 속성을 가진 개체를 만듭니다(Mark Miller 및 John Smith)
+2. 각 객체에 대해 BMI를 계산하기 위해 `calcBMI` 메소드를 생성(두 개체에 대해 동일한 방법). BMI 값을 속성에 저장하고 메소드에서 반환합니다.
+3. 전체 이름 및 각 BMI와 함께 BMI가 높은 콘솔에 기록합니다. 예: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
+
+TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
+
+```js
+const mark = {
+  fullName: 'Mark Miller',
+  mass    : 78,
+  height  : 1.69,
+  calcBMI() {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+const john = {
+  fillName: 'John Smith',
+  mass    : 92,
+  height  : 1.95,
+  calcBMI() {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+mark.calcBMI();
+john.calcBMI();
+
+console.log(mark.bmi, john.bmi);
+
+if (mark.bmi > john.bmi) {
+  console.log(
+    `${mark.fullName}'s BMI (${mark.bmi.toFixed(1)}) is higher than ${
+      john.fullName
+    }'s BMI (${john.bmi.toFixed(1)})`,
+  );
+} else if (john.bmi > mark.bmi) {
+  console.log(
+    `${john.fullName}'s BMI (${john.bmi.toFixed(1)}) is higher than ${
+      mark.fullName
+    }'s BMI (${mark.bmi.toFixed(1)})`,
+  );
+}
+```
