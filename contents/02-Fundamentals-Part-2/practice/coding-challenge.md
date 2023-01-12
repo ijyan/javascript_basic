@@ -174,3 +174,67 @@ if (mark.bmi > john.bmi) {
   );
 }
 ```
+
+### Coding Challenge #4
+
+Let's improve Steven's tip calculator even more, this time using loops!
+
+1. Create an array 'bills' containing all 10 test bill values
+2. Create empty arrays for the tips and the totals ('tips' and 'totals')
+3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate tips and total values (bill + tip) for
+   every bill value in the bills array. Use a for loop to perform the 10 calculations!
+
+TEST DATA: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
+
+HINT: Call calcTip in the loop and use the push method to add values to the tips and totals arrays 😉
+
+4. BONUS: Write a function 'calcAverage' which takes an array called 'arr' as an argument. This function calculates the
+   average of all numbers in the given array. This is a DIFFICULT challenge (we haven't done this before)! Here is how
+   to solve it:
+   4.1. First, you will need to add up all values in the array. To do the addition, start by creating a variable 'sum'
+   that starts at 0. Then loop over the array using a for loop. In each iteration, add the current value to the 'sum'
+   variable. This way, by the end of the loop, you have all values added together
+   4.2. To calculate the average, divide the sum you calculated before by the length of the array (because that's the
+   number of elements)
+   4.3. Call the function with the 'totals' array
+
+**번역**
+
+이번에는 루프를 이용해 스티븐의 팁 계산기를 더욱 개선해 봅시다!
+
+1. 10개의 테스트 청구서 값을 모두 포함하는 `bills` 배열을 만듭니다.
+2. 팁 및 합계(`tip` 및 `totals`)에 대한 빈 배열을 만듭니다.
+3. 이전에 작성한 `calcTip` 기능을 사용하여 청구서 배열의 모든 청구서 값에 대한 팁과 총 값(청구서 + 팁)을 계산합니다. for 루프를 사용하여 10개의 계산을 수행합니다!
+
+- TEST DATA: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
+- 힌트: 루프에서 calcTip을 호출하고 푸시 방법을 사용하여 팁 및 총 배열에 값을 추가합니다 😉
+
+보너스: `arr` 배열을 인수로 하는 함수 `calcAverage`를 작성합니다. 이 함수는 지정된 배열에 있는 모든 숫자의 평균을 계산합니다. 이것은 어려운 도전입니다(이전에 해본 적이 없습니다)!
+
+해결방법:
+
+1. 먼저 배열의 모든 값을 추가해야 합니다. 덧셈을 하려면 0에서 시작하는 변수 `sum`을 만다는 것으로 시작합니다. 그런 다음 for루프를 사용하여 배열 위로 루프합니다. 각 반복에서 현재 값을 `sum`변수에
+   추가합니다. 이렇게 하면 루프가 끝날 때까지 모든 값이 함께 추가됩니다.
+2. 평균을 계산하려면 이전에 계산한 합계를 배열의 길이로 나눕니다(요소의 개수이므로)
+3. `totals` 배열로 함수 호출
+
+```js
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+const calcTip = (bill) => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+for (let i = 0; i < bills.length; i++) {
+   const tip = calcTip(bills[i]);
+   tips.push(tip);
+   totals.push(tip + bills[i]);
+}
+
+console.log(bills, tips, totals);
+
+const calcAvg = (arr) => arr.reduce((acc, cur) => acc + cur, 0) / arr.length;
+
+console.log(calcAvg(totals));
+console.log(calcAvg(tips));
+```
