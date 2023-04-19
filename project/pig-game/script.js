@@ -13,16 +13,30 @@ const $btnHold = document.querySelector('.btn--hold');
 
 const $HIDDEN = 'hidden';
 
-// 초기화
-$scoreZero.textContent = 0;
-$scoreOne.textContent = 0;
-$dice.classList.add($HIDDEN);
+let scores;
+let currentScore;
+let activePlayer;
+let playing;
 
-// 주사위 굴림
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+// 초기화
+const init = () => {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+
+  $scoreZero.textContent = 0;
+  $scoreOne.textContent = 0;
+  $currentZero.textContent = 0;
+  $currentOne.textContent = 0;
+
+  $dice.classList.add($HIDDEN);
+  $playerZero.classList.remove('player--winner');
+  $playerOne.classList.remove('player--winner');
+  $playerZero.classList.add('player--active');
+  $playerOne.classList.remove('player--active');
+};
+init();
 
 const switchPlayer = () => {
   // 플레이어 변환
@@ -32,6 +46,8 @@ const switchPlayer = () => {
   $playerZero.classList.toggle('player--active');
   $playerOne.classList.toggle('player--active');
 };
+
+// 주사위 굴림
 const rollingDice = () => {
   if (playing) {
     // 1. 랜덤 숫자 생성
@@ -81,3 +97,4 @@ const clickHold = () => {
 
 $btnRoll.addEventListener('click', rollingDice);
 $btnHold.addEventListener('click', clickHold);
+$btnNew.addEventListener('click', init);
